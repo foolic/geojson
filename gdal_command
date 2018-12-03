@@ -1,1 +1,2 @@
 ogr2ogr -f GeoJSON -explodecollections output.geojson fukushima.geojson -dialect sqlite -sql "SELECT ST_Union(geometry) as geometry FROM fukushima"
+ogr2ogr -f GeoJSON -explodecollections output.geojson fukushima.geojson -dialect sqlite -sql "SELECT ST_Union(geometry) as geometry FROM fukushima where code in('072010','072133')"
